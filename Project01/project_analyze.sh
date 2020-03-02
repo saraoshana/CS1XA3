@@ -41,9 +41,9 @@ elif [ $Num -eq 5 ] ; then
 	s=`stat --format '%a' $f`
 	echo "$s">>permissions.log
 	for (( i=0; i<${#foo} ; i++ )); do
-	if [ "$(s: 0: 1)" = "2" ] ; then
-	elif [ "$(s:1:1)"  = "3" ] ; then
-	elif [ "$(s:2:1)" = "4" ] ; then
+	#if [ "$(s: 0: 1)" = "2" ] ; then
+	#elif [ "$(s:1:1)"  = "3" ] ; then
+	#elif [ "$(s:2:1)" = "4" ] ; then
 	done
 	fi
 	fi
