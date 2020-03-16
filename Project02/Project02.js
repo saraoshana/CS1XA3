@@ -1,11 +1,11 @@
-function topFunction() {
-		document.body.scrollTop = 0; // For Safari
-		document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+function topFunction() { // scroll down 
+		document.body.scrollTop = 0; 
+		document.documentElement.scrollTop = 0; 
 }
-function topFunction2() {
-		document.body.scrollTop = 2000; // For Safari
-		document.documentElement.scrollTop = 2000; // For Chrome, Firefox, IE and Opera
+function topFunction2() { //scroll up
+		document.body.scrollTop = 2000; 
+		document.documentElement.scrollTop = 2000; 
 }
-document.getElementById("changeYellow").onclick = function(){
+document.getElementById("changeYellow").onclick = function(){ //change background colour
 	document.getElementById("output").style.backgroundColor = '#f5cab3';
 }
