@@ -2,23 +2,23 @@
 ## Overview
 This webpage is Sara Oshana's custom CV that includes information about education, skills, work experience, and contact. It includes custom features such as navbar to Jump to a specific part of a page, changing the color of the background, up and down scroll buttons, and add to bookmarks option.
 ## Custom Javascript Code
-###[1] Click down arrow:
+### [1] Click down arrow:
 
 Description: This feature Creates a Scroll Button. It will take the user all the way to the bottom of the page when clicked on.
 
-##[2] Click up arrow
+### [2] Click up arrow
 
 Description: This feature Creates a Scroll Button. It will take the user to all the way to the top of the page when clicked on.
 
-##[3] change colour button
+### [3] change colour button
 
 Description: This feature Creates colour change Button. It will allow the user to change the webpage background colour to light Orange instead of the original light Purple colour
 
-##[4] Smooth Scroll
+### [4] Smooth Scroll
 
 Description: This feature will allow the user to move smoothly when using the navarbar options.
 
-##[5] Bookmark
+### [5] Bookmark
 
 Description: This feature will give the users the option of adding the webpage to their favourites.
 ## References
