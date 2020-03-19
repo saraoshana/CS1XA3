@@ -38,5 +38,3 @@ Description: This feature will give the users the option of adding the webpage t
 [https://colorhunt.co/palette/169018](https://colorhunt.co/palette/169018)
 
 
-
-
