@@ -3,6 +3,8 @@ from django.shortcuts import render,redirect
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm, PasswordChangeForm
 from django.contrib.auth import authenticate, login, logout, update_session_auth_hash
 from django.contrib import messages
+from django.contrib.auth.forms import PasswordChangeForm
+from django.contrib.auth import update_session_auth_hash
 
 from social import models
 
@@ -60,10 +62,30 @@ def signup_view(request):
     -------
       out : (HttpRepsonse) - renders signup.djhtml
     """
-    form = None
-
-    # TODO Objective 1: implement signup view
-
-    context = { 'signup_form' : form }
+    form = UserCreationForm()
+    failed = request.session.get('create_failed',False)
+    context = { 'create_form' : form
+                ,'create_failed' : failed }
 
     return render(request,'signup.djhtml',context)
+
+    # TODO Objective 1: implement signup view 
+def user_create_view(request):
+  if request.method == 'POST':
+      form = UserCreationForm(request.POST)
+      if form.is_valid():
+         form.save()
+         username = form.cleaned_data.get('username')
+         raw_password = form.cleaned_data.get('password1')
+         user = authenticate(username=username, password=raw_password)
+         if user is None:
+             models.UserInfo.objects.create_user_info(username=username,password=raw_password)
+             user = authenticate(username=username,password=raw_password)
+             login(request, user)
+             return redirect('login:messages_view')
+  request.session['create_failed'] = True
+  return redirect('login:signup_view') 
+def message_view(request):
+  context={ }
+  return render(request,'messages.djhtml')
+

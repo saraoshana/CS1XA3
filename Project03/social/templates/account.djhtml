@@ -9,6 +9,75 @@
                 <div class="w3-container w3-padding">
                     <h6 class="w3-opacity">Change Password</h6>
                     <!--                     TODO Objective 3: Add Password Change Form -->
+
+
+<button onclick="window.location.href = '{% url 'login:signup_view' %}' ;">Change Password</button>
+
+<!-- The Modal -->
+<div id="id01" class="modal">
+  <span onclick="document.getElementById('id01').style.display='none'"
+class="close" title="Close Modal">&times;</span>
+
+  <!-- Modal Content -->
+  <form class="modal-content animate" method="post" action="{% url 'login:login_view' %}">
+      {% csrf_token %}
+      <!-- <div class="imgcontainer">
+           <img src="img_avatar2.png" alt="Avatar" class="avatar">
+           </div>
+      -->
+    
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+    </div>
+  </form>
+</div>
+
+
+
+
+
+               </div>
+            </div>
+        </div>
+    </div>
+
+
+
+{% block script %}
+    <script>
+     // Get the modal
+     var modal = document.getElementById('id01');
+
+     // When the user clicks anywhere outside of the modal, close it
+     window.onclick = function(event) {
+         if (event.target == modal) {
+             modal.style.display = "none";
+         }
+     }
+    </script>
+{% endblock %}  
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+                 
                 </div>
             </div>
         </div>
@@ -19,6 +88,13 @@
                 <div class="w3-container w3-padding">
                     <h6 class="w3-opacity">Update Info</h6>
                     <!--                     TODO Objective 3: Add User Info Update Forms -->
+                
+                      <form method ="post">
+                      {% csrf_token %}
+                      {{forms.as_p}}
+                      <button type="submit"> Update Info </button>
+                    </form>
+   
                 </div>
             </div>
         </div>
